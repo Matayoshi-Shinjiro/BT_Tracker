@@ -8,24 +8,28 @@
 
     <TextView
         android:id="@+id/MechanismLink1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#0AF15F"
-        android:text="Why do we have fever?"
+        android:layout_width="359dp"
+        android:layout_height="60dp"
+        android:background="#03A9F4"
         android:onClick="goToLink1"
+        android:text="Why do we have fever?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447" />
 
     <TextView
         android:id="@+id/MechanismTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Useful links about fever"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.247" />
+        app:layout_constraintVertical_bias="0.13" />
 </androidx.constraintlayout.widget.ConstraintLayout>

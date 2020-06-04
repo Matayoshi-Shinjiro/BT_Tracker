@@ -42,6 +42,8 @@
     <LinearLayout
         android:layout_width="385dp"
         android:layout_height="287dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,11 +57,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#9C27B0"
-            android:onClick="goToLogActivity"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:text="Log Body Temperature"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF" />
 
         <View
             android:id="@+id/view2"
@@ -72,11 +74,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#2196F3"
-            android:onClick="goToNormalActivity"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:text="Normal Body Temperature"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF" />
 
         <View
             android:id="@+id/view3"
@@ -89,11 +91,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#FFC107"
-            android:onClick="goToMechanismActivity"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:text="Mechanism of fever"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF" />
 
         <View
             android:id="@+id/view4"
@@ -106,11 +108,11 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#4CAF50"
-            android:onClick="goToHandleActivity"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
             android:text="Handling fever"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 
