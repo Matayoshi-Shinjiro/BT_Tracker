@@ -1,11 +1,18 @@
 package com.example.bt_tracker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -13,6 +20,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        createNotificationChannel();
 
         TextView mainButton1 = findViewById(R.id.mainButton1);
         mainButton1.setOnClickListener(this);
@@ -53,6 +62,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent toHandle = new Intent(this, HandleActivity.class);
                 startActivity(toHandle);
                 break;
+
+        }
+    }
+
+    public void setReminder(View view) {
+        Toast.makeText(this, "Reminder set!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ReminderBroadcastReceiver.class);
+        PendingIntent pd = PendingIntent.getBroadcast(this, 0, intent, 0);
+        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+        long interval = 1000 * 2;
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,System.currentTimeMillis(), interval, pd);
+    }
+
+    private void createNotificationChannel(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            String channelID = "BT_Tracker_Channel";
+            String channelName = "BTTrackerReminderChannel";
+            String channelDescription = "Channel for BT Tracker reminder";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(channelID, channelName, importance);
+            channel.setDescription(channelDescription);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
         }
     }
 }
