@@ -113,7 +113,6 @@
         android:id="@+id/setReminderButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="setReminder"
         android:text="Set reminder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,7 +121,7 @@
         app:layout_constraintVertical_bias="0.38" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/temperatureLogo"
         android:layout_width="92dp"
         android:layout_height="153dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         TextView mainButton4 = findViewById(R.id.mainButton4);
         mainButton4.setOnClickListener(this);
+
+        Button setReminderButton = findViewById(R.id.setReminderButton);
+        setReminderButton.setOnClickListener(this);
     }
 
     @Override
@@ -63,16 +67,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(toHandle);
                 break;
 
+            case R.id.setReminderButton:
+                // setReminderButton push push, do something something
+                Toast.makeText(this, "Reminder set!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, ReminderBroadcastReceiver.class);
+                PendingIntent pd = PendingIntent.getBroadcast(this, 0, intent, 0);
+                AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+                long interval = 1000 * 2;
+                alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,System.currentTimeMillis(), interval, pd);
+                break;
         }
-    }
-
-    public void setReminder(View view) {
-        Toast.makeText(this, "Reminder set!", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, ReminderBroadcastReceiver.class);
-        PendingIntent pd = PendingIntent.getBroadcast(this, 0, intent, 0);
-        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
-        long interval = 1000 * 2;
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,System.currentTimeMillis(), interval, pd);
     }
 
     private void createNotificationChannel(){

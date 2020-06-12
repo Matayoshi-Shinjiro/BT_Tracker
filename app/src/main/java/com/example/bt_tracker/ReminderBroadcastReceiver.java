@@ -15,16 +15,16 @@ public class ReminderBroadcastReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
-        Intent notificationIntent = new Intent(context, LogActivity.class);
-        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        Intent notificationIntent = new Intent(context, LogActivity.class); // Log activity screen
+        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT); // contentIntent =  LogActivity
         NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "BT_Tracker_Channel")
                 .setSmallIcon(R.mipmap.ic_launcher_round)
-                .setContentTitle("Notification from BT Tracker")
-                .setContentText("Please log your body temperature now")
+                .setContentTitle("Notification from BT Tracker") //
+                .setContentText("Please log your body temperature now") //
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setContentIntent(contentIntent)
+                .setContentIntent(contentIntent) // If notification get press, sent to LogActivity screen
                 .setAutoCancel(true)
                 ;
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
