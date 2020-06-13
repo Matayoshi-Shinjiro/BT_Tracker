@@ -1,4 +1,5 @@
 <resources>
+    // the point for extracting is that to make things easier for the programmer
     <string name="app_name">BT_Tracker</string>
     <string name="log_body_temperature">Log Body Temperature</string>
     <string name="normal_body_temperature">Normal Body Temperature</string>

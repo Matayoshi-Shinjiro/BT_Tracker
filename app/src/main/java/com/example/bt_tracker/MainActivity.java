@@ -15,10 +15,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{   //class 4 and 5
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {  //setting the vd here
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setReminderButton.setOnClickListener(this);
     }
 
-    @Override
-    public void onClick(View view){
+    @Override  // onClick stuff moved to here
+    public void onClick(View view){ // class 3
         switch (view.getId()){
             case R.id.mainButton1:
                 // mainButton1 push push, do something something
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void createNotificationChannel(){
+    private void createNotificationChannel(){ // the notification stuff here
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             String channelID = "BT_Tracker_Channel";
             String channelName = "BTTrackerReminderChannel";
