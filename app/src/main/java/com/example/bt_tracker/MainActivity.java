@@ -18,13 +18,13 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{   //class 4 and 5
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {  //setting the vd here
+    protected void onCreate(Bundle savedInstanceState) {  //setting the attribute here
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         createNotificationChannel();
 
-        TextView mainButton1 = findViewById(R.id.mainButton1);
+        TextView mainButton1 = findViewById(R.id.mainButton1); // class 2
         mainButton1.setOnClickListener(this);
 
         TextView mainButton2 = findViewById(R.id.mainButton2);
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override  // onClick stuff moved to here
-    public void onClick(View view){ // class 3
+    public void onClick(View view){ //  //setting the attribute here class 3
         switch (view.getId()){
             case R.id.mainButton1:
                 // mainButton1 push push, do something something
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(toHandle);
                 break;
 
-            case R.id.setReminderButton:
+            case R.id.setReminderButton: // class 5
                 // setReminderButton push push, do something something
                 Toast.makeText(this, "Reminder set!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, ReminderBroadcastReceiver.class);
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void createNotificationChannel(){ // the notification stuff here
+    private void createNotificationChannel(){ // the notification stuff here class 5
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             String channelID = "BT_Tracker_Channel";
             String channelName = "BTTrackerReminderChannel";
