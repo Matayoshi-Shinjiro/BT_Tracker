@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04000002" />
+        app:layout_constraintVertical_bias="0.07999998" />
 
     <ScrollView
         android:id="@+id/normalTextScroll"
@@ -27,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NormalTextView1"
-        app:layout_constraintVertical_bias="0.38">
+        app:layout_constraintVertical_bias="0.13999999">
 
         <TextView
             android:id="@+id/textView"
@@ -40,8 +40,8 @@
         android:id="@+id/normalToHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back to Home"
         android:onClick="normalToHome"
+        android:text="Back to Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
